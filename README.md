@@ -1,8 +1,8 @@
-# Project Name "Angular-http-Client-Angular-Auth"
+# Project Name "angular-http-Client-and-angular-auth"
 
 A practice Angular project implementing authentication and authorization using Angular's HttpClient. Firebase is used as the real-time database to handle secure user data and asynchronous operations.
 
-# AngularHttpClient
+# AngularHttpClientAndAngularAuth
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
 
