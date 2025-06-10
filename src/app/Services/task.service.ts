@@ -4,7 +4,8 @@ import { Task } from '../Model/Task';
 import { map } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { AuthService } from './auth-service';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class TaskService {
   CreateTask(task: Task) {
     const headers = new HttpHeaders({ 'my-header': 'hello-world' });
     return this.http.post<{ name: string }>(
-      environment.firebaseRealtimeDatabaseAPIKEY + 'tasks.json',
+      environment.firebaseRealtimeDataBaseApiKey + 'tasks.json',
       task,
       { headers: headers }
     );
@@ -25,20 +26,20 @@ export class TaskService {
 
   DeleteTask(id: string | undefined) {
     return this.http.delete(
-      environment.firebaseRealtimeDatabaseAPIKEY + 'tasks/' + id + '.json'
+      environment.firebaseRealtimeDataBaseApiKey + 'tasks/' + id + '.json'
     );
   }
 
   DeleteAllTasks() {
     return this.http.delete(
-      environment.firebaseRealtimeDatabaseAPIKEY + 'tasks.json',
+      environment.firebaseRealtimeDataBaseApiKey + 'tasks.json',
       { observe: 'response', responseType: 'json' }
     );
   }
 
   GetAlltasks() {
     return this.http
-      .get(environment.firebaseRealtimeDatabaseAPIKEY + 'tasks.json')
+      .get(environment.firebaseRealtimeDataBaseApiKey + 'tasks.json')
       .pipe(
         map((response) => {
           //TRANSFORM DATA
@@ -56,14 +57,14 @@ export class TaskService {
 
   UpdateTask(id: string | undefined, data: Task) {
     return this.http.put(
-      environment.firebaseRealtimeDatabaseAPIKEY + 'tasks/' + id + '.json',
+      environment.firebaseRealtimeDataBaseApiKey + 'tasks/' + id + '.json',
       data
     );
   }
 
   getTaskDetails(id: string | undefined) {
     return this.http
-      .get(environment.firebaseRealtimeDatabaseAPIKEY + 'tasks/' + id + '.json')
+      .get(environment.firebaseRealtimeDataBaseApiKey + 'tasks/' + id + '.json')
       .pipe(
         map((response) => {
           let task = {};

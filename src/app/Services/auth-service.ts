@@ -4,7 +4,8 @@ import { AuthResponse } from '../Model/AuthResponse';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../Model/User';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,7 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        environment.firebaseSignupAPIKEY + environment.firebaseAPIKEY,
+        environment.firebaseSignupApiKey + environment.firebaseApiKey,
         data
       )
       .pipe(
@@ -34,7 +35,7 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        environment.firebaseLoginAPIKEY + environment.firebaseAPIKEY,
+        environment.firebaseSigninApiKey + environment.firebaseApiKey,
         data
       )
       .pipe(
