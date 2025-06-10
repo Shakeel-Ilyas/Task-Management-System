@@ -1,6 +1,6 @@
 # Project Name "task-management-system"
 
-It is a practice project built with Angular, TypeScript, and HTML/CSS. It is a secure task management application which features Firebase as a backend for authentication and database operations. Users must be logged in to perform CRUD operations (create, read, update, delete) on tasks. A signup option is integrated for new accounts.
+It is a practice project built with Angular, TypeScript, and HTML/CSS. It is a secure task management application which features Firebase as a backend for authentication and database operations. Users must be logged in to perform CRUD operations (create, read, update, delete) on tasks. A signup option is integrated for new accounts.sss
 
 # TaskManagementSystem
 
