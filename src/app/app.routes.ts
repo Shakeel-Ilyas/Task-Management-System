@@ -12,8 +12,8 @@ export const routes: Routes = [
     path: 'dashboard',
     canActivate: [canActivate],
     children: [
-        { path: 'overview', component: OverviewComponent },
-        { path: 'stats', component: StatsComponent }
-      ],
+      { path: 'overview', component: OverviewComponent },
+      { path: 'stats', component: StatsComponent },
+    ],
   },
 ];

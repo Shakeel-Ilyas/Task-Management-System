@@ -15,15 +15,13 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent{
+export class LoginComponent {
   authService: AuthService = inject(AuthService);
   isLoginMode: boolean = true;
   isLoading: boolean = false;
   errorMessage: string | null = null;
   authObs: Observable<AuthResponse>;
-  router: Router = inject(Router)
-
-
+  router: Router = inject(Router);
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -44,8 +42,7 @@ export class LoginComponent{
     }
 
     this.authObs.subscribe({
-      next: (res) => {
-        console.log(res);
+      next: () => {
         this.isLoading = false;
         this.router.navigate(['/dashboard/overview']);
       },

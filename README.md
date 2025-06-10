@@ -1,8 +1,8 @@
-# Project Name "angular-http-client-and-angular-auth"
+# Project Name "task-management-system"
 
-A practice Angular project implementing authentication and authorization using Angular's HttpClient. Firebase is used as the real-time database to handle secure user data and asynchronous operations.
+It is a practice project built with Angular, TypeScript, and HTML/CSS. It is a secure task management application which features Firebase as a backend for authentication and database operations. Users must be logged in to perform CRUD operations (create, read, update, delete) on tasks. A signup option is integrated for new accounts.
 
-# AngularHttpClientAndAngularAuth
+# TaskManagementSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
 

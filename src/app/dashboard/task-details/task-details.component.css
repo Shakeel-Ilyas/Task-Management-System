@@ -34,20 +34,20 @@
   border: none;
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: #06d85f;
 }
 .popup .content {
   max-height: 30%;
   overflow: auto;
 }
 
-@media screen and (max-width: 700px){
-  .popup{
+@media screen and (max-width: 700px) {
+  .popup {
     width: 70%;
   }
 }
-hr{
-  border: #28282B 3px solid;
+hr {
+  border: #28282b 3px solid;
   margin: 15px 0px;
 }
 .container {
@@ -68,7 +68,8 @@ hr{
 .container .form {
   margin-top: 30px;
 }
-.form .input-box, textarea {
+.form .input-box,
+textarea {
   width: 100%;
   margin-top: 20px;
 }
@@ -83,12 +84,12 @@ hr{
   font-size: 1rem;
   color: #707070;
   margin-top: 8px;
-  border: 2px solid #aaa; 
+  border: 2px solid #aaa;
   border-radius: 6px;
   padding: 0 15px;
 }
 
-textarea{
+textarea {
   border: 2px solid #aaa;
   border-radius: 6px;
   padding: 10px 15px;
@@ -146,7 +147,7 @@ textarea{
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #3498DB;
+  background: #3498db;
 }
 .form button:hover {
   background: rgb(88, 56, 250);

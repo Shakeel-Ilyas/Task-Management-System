@@ -6,7 +6,7 @@
 
   <!--APP NAVBAR-->
   <div class="app-header-navbar">
-    <a routerLink="/">HOME</a>
+    <a routerLink="/" class="home">HOME</a>
 
     <div class="dropdown" *ngIf="isLoggedIn">
       <button class="dropbtn">
@@ -16,11 +16,10 @@
       <div class="dropdown-content">
         <a routerLink="dashboard/overview">OVERVIEW</a>
         <a routerLink="dashboard/stats">STATS</a>
-        <!-- <a routerLink="dashboard/more">MORE LINK</a> -->
       </div>
     </div>
 
     <a routerLink="/login" *ngIf="!isLoggedIn">LOGIN</a>
-    <a *ngIf="isLoggedIn" (click)="onLogout()">LOGOUT</a>
+    <a *ngIf="isLoggedIn" (click)="onLogout()" class="logout">LOGOUT</a>
   </div>
 </div>

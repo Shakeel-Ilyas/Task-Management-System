@@ -1,12 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { AuthResponse } from '../Model/AuthResponse';
-import { BehaviorSubject, catchError, Subject, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../Model/User';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
-
-
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +19,7 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAHGjE1QNq7OnNJh8JLV_6juBhAyF4wfj4' + environment.firebaseAPIKEY,
+        environment.firebaseSignupAPIKEY + environment.firebaseAPIKEY,
         data
       )
       .pipe(
@@ -36,7 +34,7 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAHGjE1QNq7OnNJh8JLV_6juBhAyF4wfj4',
+        environment.firebaseLoginAPIKEY + environment.firebaseAPIKEY,
         data
       )
       .pipe(
@@ -54,7 +52,6 @@ export class AuthService {
 
     if (this.tokenExpiretimer) {
       clearTimeout(this.tokenExpiretimer);
-      
     }
 
     this.tokenExpiretimer = null;
@@ -76,7 +73,8 @@ export class AuthService {
 
     if (loggedUser.token) {
       this.user.next(loggedUser);
-      const timerValue = (new Date(user.expiresIn).getTime()) - (new Date().getTime())
+      const timerValue =
+        new Date(user.expiresIn).getTime() - new Date().getTime();
       this.autoLogout(timerValue);
     }
   }
@@ -98,7 +96,6 @@ export class AuthService {
   }
   private handleError(err) {
     let errorMessage = 'An unknown error has occured';
-    console.log(err);
     if (!err.error || !err.error.error) {
       return throwError(() => errorMessage);
     }
